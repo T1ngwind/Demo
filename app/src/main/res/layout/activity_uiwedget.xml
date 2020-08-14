@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal">
+
+    <!--TextView-->
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/textview"
+      android:text="TextView"
+      android:textSize="20sp"
+      android:textColor="#ff00ff"
+      android:gravity="center_horizontal"/>
+
+    <!--EditText-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittext"
+        android:hint="EditText"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"/>
+
+    <!--Button-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:text="Button"
+        android:textSize="20sp"
+        android:textColor="#ff00ff"/>
+
+    <!--RadioButton-->
+    <androidx.appcompat.widget.AppCompatRadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiobutton"
+        android:text="男" />
+    <androidx.appcompat.widget.AppCompatRadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiobutton1"
+        android:text="女"/>
+
+    <!--RadioGroup  单选组-->
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/radiogroup">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="判断：  "
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radiobutton2"
+            android:text="是"
+            android:textSize="20sp"
+            android:checked="true"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radiobutton3"
+            android:text="否"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"/>
+    </RadioGroup>
+
+    <!--CheckBox-->
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox"
+        android:text="西瓜"
+        android:textSize="20sp"
+        android:textColor="#000000" />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox1"
+        android:text="香蕉"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:checked="true"/>
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox3"
+        android:text="苹果"
+        android:textSize="20sp"
+        android:textColor="#000000" />
+
+    <!--SeekBar-->
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekbar"
+        android:progress="45" />
+
+    <!--ListView-->
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/listview"
+        android:layout_gravity="center_horizontal">
+    </ListView>
+
+    <!--RecyclerView-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/recyclerview"
+        android:orientation="vertical">
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+</LinearLayout>

@@ -16,6 +16,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ComponentActivity"
+            android:exported="true"
+            android:label="四大组件"></activity>
+        <activity
+            android:name=".UIWedgetActivity"
+            android:exported="true"
+            android:label="UI控件"></activity>
+        <activity
+            android:name=".MultiThreadActivity"
+            android:exported="true"
+            android:label="多线程"></activity>
+        <activity
+            android:name=".StorageActivity"
+            android:exported="true"
+            android:label="存储"></activity>
+
+
+
+
+
+
+
+
+
+
     </application>
 
 </manifest>
