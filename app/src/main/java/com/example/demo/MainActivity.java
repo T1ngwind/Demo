@@ -17,6 +17,13 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
+	/**
+	 * @description:成员变量
+	 * 		four_component
+	 * 		ui_widget
+	 * 		multi_thread
+	 * 		storage
+	 * 	*/
 	TextView four_component;	//四大组件
 	TextView ui_widget;			//UI控件
 	TextView multi_thread;		//多线程

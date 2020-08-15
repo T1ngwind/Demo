@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author 			Ting听
@@ -32,6 +33,21 @@ import java.util.ArrayList;
  * @description 	用于显示常用UI控件
  */
 public class UIWedgetActivity extends AppCompatActivity {
+	/**
+	 * @description:成员变量
+	 * 		textView
+	 * 		editText
+	 * 		button
+	 * 		radioButton1
+	 * 		radioGroup
+	 * 		checkBox1
+	 * 		seekBar
+	 * 		listView
+	 * 		recyclerView
+	 *
+	 * 		arrayList
+	 * 	*/
+
 	TextView textView;			//新建一个TextView控件
 	EditText editText;			//新建一个EditText控件
 	Button button;				//新建一个Button控件
@@ -42,7 +58,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 	ListView listView;			//新建一个ListView控件
 	RecyclerView recyclerView;	//新建一个RecyclerView控件
 
-	ArrayList arrayList;		//新建一个List数组
+	List<String> arrayList;		//新建一个List数组
 
 
 
@@ -175,21 +191,42 @@ public class UIWedgetActivity extends AppCompatActivity {
 
 		/**
 		 * @description:RecyclerView
-		 *
+		 *		使用线性布局管理器
 		 *
 		 * */
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(UIWedgetActivity.this,RecyclerView.HORIZONTAL,false);
+		//设置recyclerView为线性布局管理器
 		recyclerView.setLayoutManager(linearLayoutManager);
-		arrayList = new ArrayList();
+		arrayList = new ArrayList<String>();
 
 		for(int i=0;i<20;i++){
-
 			arrayList.add("item"+i);
 		}
-
-
 		MyAdapter adapter2 = new MyAdapter(this,arrayList);
 		recyclerView.setAdapter(adapter2);
+		//点击事件
+		adapter2.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
+			@Override
+			public void onItemClick(View view, int position) {
+				Toast toast = Toast.makeText(UIWedgetActivity.this,null,Toast.LENGTH_SHORT);
+				toast.setText(arrayList.get(position)+"被点击了");
+				toast.show();
+				/*Toast.makeText(RecyclerViewActivity.this,datas.get(position)+"被点击了",
+						Toast.LENGTH_SHORT).show();*/
+			}
+		});
+		//长按事件
+		adapter2.setOnItemLongClickListener(new MyAdapter.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(View view, int position) {
+				Toast toast = Toast.makeText(UIWedgetActivity.this,null,Toast.LENGTH_SHORT);
+				toast.setText(arrayList.get(position)+"被长按了");
+				toast.show();
+				/*Toast.makeText(RecyclerViewActivity.this,datas.get(position)+"被长按了",
+						Toast.LENGTH_SHORT).show();*/
+				return true;
+			}
+		});
 
 
 

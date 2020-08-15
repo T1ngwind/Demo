@@ -1,8 +1,10 @@
 package com.example.demo;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,11 +18,12 @@ import java.util.List;
  * @date 2020-08-14 20:23
  * @description https://www.jianshu.com/p/5ad99a1170ab
  */
-public class MyAdapter extends RecyclerView.Adapter {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 	//当前上下文对象
 	Context context;
 	//RecyclerView填充Item数据的List对象
 	List<String> datas;
+
 	public MyAdapter() {
 		super();
 	}
@@ -30,101 +33,143 @@ public class MyAdapter extends RecyclerView.Adapter {
 		this.datas = datas;
 	}
 
-	@NonNull
-	@Override
-	public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-		return null;
+	/**
+	 * 设置回调接口
+	 */
+	public interface OnItemClickListener {
+		void onItemClick(View view, int position);
 	}
-
-
-	@Override
-	public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-	}
-
-
-	@Override
-	public int getItemViewType(int position) {
-		return super.getItemViewType(position);
-	}
-
-
-	@Override
-	public void setHasStableIds(boolean hasStableIds) {
-		super.setHasStableIds(hasStableIds);
-	}
-
-
-	@Override
-	public long getItemId(int position) {
-		return super.getItemId(position);
-	}
-
-
-	@Override
-	public int getItemCount() {
-		return 0;
-	}
-
-
-	@Override
-	public void onViewRecycled(@NonNull RecyclerView.ViewHolder holder) {
-		super.onViewRecycled(holder);
-	}
-
-
-	@Override
-	public boolean onFailedToRecycleView(@NonNull RecyclerView.ViewHolder holder) {
-		return super.onFailedToRecycleView(holder);
-	}
-
-
-	@Override
-	public void onViewAttachedToWindow(@NonNull RecyclerView.ViewHolder holder) {
-		super.onViewAttachedToWindow(holder);
-	}
-
-
-	@Override
-	public void onViewDetachedFromWindow(@NonNull RecyclerView.ViewHolder holder) {
-		super.onViewDetachedFromWindow(holder);
-	}
-
-
-	@Override
-	public void registerAdapterDataObserver(@NonNull RecyclerView.AdapterDataObserver observer) {
-		super.registerAdapterDataObserver(observer);
+	/**
+	 * 设置长按回调接口
+	 */
+	public interface OnItemLongClickListener {
+		boolean onItemLongClick(View view, int position);
 	}
 
 	/**
-	 * Unregister an observer currently listening for data changes.
-	 *
-	 * <p>The unregistered observer will no longer receive events about changes
-	 * to the adapter.</p>
-	 *
-	 * @param observer Observer to unregister
-	 * @see #registerAdapterDataObserver(RecyclerView.AdapterDataObserver)
+	 * 事件回调监听
 	 */
-	@Override
-	public void unregisterAdapterDataObserver(@NonNull RecyclerView.AdapterDataObserver observer) {
-		super.unregisterAdapterDataObserver(observer);
+	private OnItemClickListener onItemClickListener;
+	private OnItemLongClickListener onItemLongClickListener;
+	/**
+	 * 设置回调监听
+	 *
+	 * @param listener
+	 */
+	public void setOnItemClickListener(OnItemClickListener listener) {
+		this.onItemClickListener = listener;
+	}
+
+	public void setOnItemLongClickListener(OnItemLongClickListener onItemLongClickListener) {
+		this.onItemLongClickListener = onItemLongClickListener;
 	}
 
 
+
+
+	@NonNull
 	@Override
-	public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-		super.onAttachedToRecyclerView(recyclerView);
+	public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+		View v;
+		if(viewType==0){
+			v = View.inflate(context,R.layout.item1,null);
+		}else{
+			v = View.inflate(context,R.layout.item2,null);
+
+		}
+		final MyViewHolder myViewHolder = new MyViewHolder(v);
+
+
+		return myViewHolder;
+	}
+
+	//绑定数据
+	@Override
+	public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+		holder.textView.setText(datas.get(position));
+		//将position保存在itemView的Tag中，以便点击时进行获取
+		holder.itemView.setTag(position);
+
+		/*//1.在Adapter里面直接对控件做点击事件
+		holder.textView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Toast toast = Toast.makeText(context,null,Toast.LENGTH_SHORT);
+				toast.setText(holder.textView.getText()+"被点击了");
+				toast.show();
+
+			}
+		});*/
+
+		//2.写接口，在Activity或Fragment上实现接口中定义的方法
+		holder.textView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				if(onItemClickListener != null){
+					onItemClickListener.onItemClick(view,position);
+				}
+
+			}
+		});
+		//通过接口回调响应长按事件
+		holder.textView.setOnLongClickListener(new View.OnLongClickListener() {
+			@Override
+			public boolean onLongClick(View view) {
+				if(onItemLongClickListener != null){
+					return onItemLongClickListener.onItemLongClick(view,position);
+				}
+				return false;
+			}
+		});
+
+
+
 	}
 
 
+	/**
+	 * @Description:getItemViewType
+	 * 	获取要素item的位置，返回不同的值，用于界面显示
+	 * */
 	@Override
-	public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
-		super.onDetachedFromRecyclerView(recyclerView);
+	public int getItemViewType(int position) {
+		if(position%2==0){
+			return 0;
+		}else{
+			return 2;
+		}
 	}
 
 
+	/**@description:getItemCount
+	 * 		返回Item的数量
+	 * */
 	@Override
-	public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, @NonNull List payloads) {
-		super.onBindViewHolder(holder, position, payloads);
+	public int getItemCount() {
+		return datas.size();
 	}
+
+
+
+	/**
+	 * @description:MyViewHolder类
+	 *   继承RecyclerView.ViewHolder抽象类的自定义MyViewHolder
+	 *
+	 * */
+	class MyViewHolder extends RecyclerView.ViewHolder{
+		TextView textView;
+		public MyViewHolder(View itemView){
+			super(itemView);
+			textView = itemView.findViewById(R.id.item);
+		}
+	}
+
+
+
+
+
+
+
+
+
 }

@@ -32,6 +32,22 @@
             android:name=".StorageActivity"
             android:exported="true"
             android:label="存储"></activity>
+        <activity
+            android:name=".ActivityActivity"
+            android:exported="true"
+            android:label="Activity"></activity>
+        <activity
+            android:name=".ServiceActivity"
+            android:exported="true"
+            android:label="Service"></activity>
+        <activity
+            android:name=".BroadcastReceiverActivity"
+            android:exported="true"
+            android:label="BroadcastReceiver"></activity>
+        <activity
+            android:name=".ContentProviderActivity"
+            android:exported="true"
+            android:label="ContentProvider"></activity>
 
 
 
