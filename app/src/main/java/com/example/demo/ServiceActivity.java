@@ -34,8 +34,8 @@ public class ServiceActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_service);
 
 		Play 	= findViewById(R.id.play);	//绑定组件
-		Pause	= findViewById(R.id.play);	//绑定组件
-		Stop 	= findViewById(R.id.play);	//绑定组件
+		Pause	= findViewById(R.id.pause);	//绑定组件
+		Stop 	= findViewById(R.id.stop);	//绑定组件
 
 		mediaPlayer = MediaPlayer.create(this,R.raw.confessionsballoon);
 

@@ -48,6 +48,9 @@
             android:name=".ContentProviderActivity"
             android:exported="true"
             android:label="ContentProvider"></activity>
+        <service
+            android:name=".MyService"></service>
+
 
 
 
