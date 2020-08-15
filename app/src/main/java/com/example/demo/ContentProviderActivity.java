@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * @author Ting听
  * @version 1.0
  * @date 2020-08-15 18:20
- * @description ****
+ * @description 用于验证ContentProvider组件
  */
 public class ContentProviderActivity extends AppCompatActivity {
 	@Override

@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Activity"
+        android:text="Activity 完成"
         android:textSize="50sp"
         android:textColor="#ff0000"/>
 </LinearLayout>
