@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.demo">
 
+    <!--权限-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,40 +20,87 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--四大组件-->
         <activity
             android:name=".ComponentActivity"
             android:exported="true"
             android:label="四大组件"></activity>
-        <activity
-            android:name=".UIWedgetActivity"
-            android:exported="true"
-            android:label="UI控件"></activity>
-        <activity
-            android:name=".MultiThreadActivity"
-            android:exported="true"
-            android:label="多线程"></activity>
-        <activity
-            android:name=".StorageActivity"
-            android:exported="true"
-            android:label="存储"></activity>
+        <!--Activity-->
         <activity
             android:name=".ActivityActivity"
             android:exported="true"
             android:label="Activity"></activity>
+        <!--Service-->
         <activity
             android:name=".ServiceActivity"
             android:exported="true"
             android:label="Service"></activity>
+        <service
+            android:name=".MyService"></service>
+        <!--BroadcastReceiver-->
         <activity
             android:name=".BroadcastReceiverActivity"
             android:exported="true"
             android:label="BroadcastReceiver"></activity>
+        <receiver android:name=".MyReceiver"></receiver>
+
+        <!--ContentProvider-->
+        <!--authorities：为该ContentProvider分配了一个域名 -->
         <activity
             android:name=".ContentProviderActivity"
             android:exported="true"
             android:label="ContentProvider"></activity>
-        <service
-            android:name=".MyService"></service>
+        <provider
+            android:authorities="com.example.demo.provider"
+            android:name=".MyContentProvider"
+            android:exported="true"></provider>
+
+
+        <!--常用UI控件-->
+        <activity
+            android:name=".UIWedgetActivity"
+            android:exported="true"
+            android:label="UI控件"></activity>
+
+
+        <!--多线程-->
+        <activity
+            android:name=".MultiThreadActivity"
+            android:exported="true"
+            android:label="多线程"></activity>
+
+
+
+       <!--数据存储-->
+        <activity
+            android:name=".StorageActivity"
+            android:exported="true"
+            android:label="存储"></activity>
+        <!--FileIO文件存储-->
+        <activity
+            android:name=".FileIOActivity"
+            android:exported="true"
+            android:label="FileIO"></activity>
+        <!--SharedPreferences轻量级存储-->
+        <activity
+            android:name=".SharedPreferencesActivity"
+            android:exported="true"
+            android:label="SharedPreferences"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true"
+            android:label="Register"></activity>
+        <activity
+            android:name=".SystemActivity"
+            android:exported="true"
+            android:label="System"></activity>
+
+        <!--数据库SQLite存储-->
+        <activity
+            android:name=".SQLiteActivity"
+            android:exported="true"
+            android:label="SQLite"></activity>
 
 
 

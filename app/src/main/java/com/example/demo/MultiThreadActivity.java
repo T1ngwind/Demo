@@ -15,6 +15,7 @@ public class MultiThreadActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//使用activity_activity.xml文件定义的界面布局
 		setContentView(R.layout.activity_multithread);
 	}
 }

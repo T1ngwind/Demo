@@ -5,16 +5,16 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-/**用于验证Activity组件
+/**登录成功界面
  * @author Ting听
  * @version 1.0
- * @date 2020-08-15 18:08
+ * @date 2020-08-16 18:58
  */
-public class ActivityActivity extends AppCompatActivity {
+public class SystemActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//使用activity_activity.xml文件定义的界面布局
-		setContentView(R.layout.activity_activity);
+		//使用activity_system.xml文件定义的界面布局
+		setContentView(R.layout.activity_system);
 	}
 }

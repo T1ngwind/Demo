@@ -10,12 +10,10 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Toast;
 
-/**
+/**自定义Service，主要是为了实现音乐的播放、暂停和停止功能。
  * @author Ting听
  * @version 1.0
  * @date 2020-08-15 21:12
- * @description 自定义Service，主要是为了实现音乐的播放、暂停和停止功能
- *
  * 		Attention！！！不要忘记在Manifest中注册该服务。
  */
 public class MyService extends Service {

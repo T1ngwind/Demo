@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sharedPreferences"
+        android:text="SharedPreferences"
+        android:textSize="30sp"
+        android:textColor="#0000ff"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fileio"
+        android:text="FileIO"
+        android:textSize="30sp"
+        android:textColor="#0000ff"
+        android:gravity="center"
+        android:layout_marginTop="40dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sqlite"
+        android:text="SQLite"
+        android:textSize="30sp"
+        android:textColor="#0000ff"
+        android:gravity="center"
+        android:layout_marginTop="40dp"/>
+
 
 </LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:orientation="vertical">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="写入预览区"
+        android:id="@+id/txt_write"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:hint="读出显示区"
+        android:id="@+id/txt_read"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/writeIn"
+        android:text="写入"
+        android:textSize="20sp"
+        android:textColor="#ff00ff"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/readOut"
+        android:text="读出"
+        android:textSize="20sp"
+        android:textColor="#ff00ff"
+        />
+
+</LinearLayout>

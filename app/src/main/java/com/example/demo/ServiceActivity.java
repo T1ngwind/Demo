@@ -9,11 +9,10 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-/**
+/**通过搭建一个简易音乐播放器，用于验证Service组件
  * @author Ting听
  * @version 1.0
  * @date 2020-08-15 18:16
- * @description 通过搭建一个简易音乐播放器，用于验证Service组件
  */
 public class ServiceActivity extends AppCompatActivity {
 	/**
@@ -31,6 +30,7 @@ public class ServiceActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//使用activity_service.xml文件定义的界面布局
 		setContentView(R.layout.activity_service);
 
 		Play 	= findViewById(R.id.play);	//绑定组件

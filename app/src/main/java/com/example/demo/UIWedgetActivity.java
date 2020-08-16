@@ -26,11 +26,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/**用于显示常用UI控件
  * @author 			Ting听
  * @version 		1.0
  * @date 			2020-08-14 12:59
- * @description 	用于显示常用UI控件
  */
 public class UIWedgetActivity extends AppCompatActivity {
 	/**
@@ -65,6 +64,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//使用activity_uiwedget.xml文件定义的界面布局
 		setContentView(R.layout.activity_uiwedget);
 
 		textView 		= findViewById(R.id.textview);		//绑定控件

@@ -8,11 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-/**
+/**新建四大组件，用以实现其功能
  * @author 			Ting听
  * @version 		1.0
  * @date 			2020-08-14 12:59
- * @description 	****
  */
 public class ComponentActivity extends AppCompatActivity {
 	/**
@@ -32,6 +31,7 @@ public class ComponentActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//使用activity_component.xml文件定义的界面布局
 		setContentView(R.layout.activity_component);
 		Activity 			= findViewById(R.id.activity);				//获取UI界面中ID为R.id.activity的文本框
 		Service 			= findViewById(R.id.service);				//获取UI界面中ID为R.id.service的文本框

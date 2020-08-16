@@ -11,16 +11,4 @@
 /build
 /captures
 .externalNativeBuild
-/app/src/main/java/index-files
-/app/src/main/java/allclasses-frame.html
-/app/src/main/java/allclasses-noframe.html
-/app/src/main/java/constant-values.html
-/app/src/main/java/deprecated-list.html
-/app/src/main/java/help-doc.html
-/app/src/main/java/overview-tree.html
-/app/src/main/java/package-list
-/app/src/main/java/script.js
-/app/src/main/java/stylesheet.css
-/app/src/main/java/com/example/demo/class-use
-/app/src/main/java/com/example/demo/*.html
-
+/app/src/main/javaDoc

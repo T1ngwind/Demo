@@ -7,11 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-/**
+/**Android应用的主界面，用于后续组件开发的启动页
  * @version 		1.0
  * @author  		Ting听
  * @date 			2020年8月14日11:01:37
- * @description 	Android应用的主界面，用于后续组件开发的启动页
  *
  * */
 
@@ -32,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//使用activity_main.xml文件定义的界面布局
 		setContentView(R.layout.activity_main);				//绑定layout布局文件
 
 		four_component = findViewById(R.id.four_component);	//绑定UI控件
