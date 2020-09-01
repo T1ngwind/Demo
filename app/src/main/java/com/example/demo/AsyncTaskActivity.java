@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.BufferedReader;
@@ -19,8 +20,9 @@ import java.net.URLConnection;
  * @date 2020-08-25 10:30
  */
 public class AsyncTaskActivity extends AppCompatActivity {
-	//新建一个TextView
-	private TextView text1;
+
+	private TextView text1;//新建一个TextView
+	private Button button1;//新建一个Button
 	protected void onCreate(Bundle saveInstanceSate) {
 		super.onCreate(saveInstanceSate);
 		//使用activity_asynctask.xml文件定义的界面布局
