@@ -25,7 +25,7 @@ public class MyReceiver extends BroadcastReceiver {
 		toast.setText("网络状态发生变化");
 		toast.show();
 		//显示状态发生改变
-		textViewShow.setText("Ting听，真的听到了");
+		textViewShow.setText("网络状态发生变化");
 
 		/**新建一个线程用于显示网络发生变化时的状态提示，持续时间两秒
 		 *
@@ -38,7 +38,7 @@ public class MyReceiver extends BroadcastReceiver {
 					Thread.sleep(2000);
 				}catch(Exception e){
 				}finally{
-					textViewShow.setText("Ting听的见吗？");
+					textViewShow.setText("网络状态发生改变了吗？");
 				}
 			}
 		}).start();

@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,10 +38,15 @@ public class ContentProviderActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				ContentResolver contentResolver = getContentResolver();
 				Cursor cursor = contentResolver.query(Uri.parse("content://com.example.demo.provider"),null,null,null,null);
+
+				Toast toast = Toast.makeText(ContentProviderActivity.this,null,Toast.LENGTH_SHORT);
+				toast.setText("你执行了查询操作");
+				toast.show();
+
 			}
 		});
 
-		//绑定事件监听
+		//绑定事件监听,和query类似
 		insert.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {

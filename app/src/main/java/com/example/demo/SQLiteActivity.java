@@ -35,7 +35,7 @@ public class SQLiteActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_sqlite);
 
 		//创建或打开数据库（此处需要使用绝对路径）
-		sqLiteDatabase = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString()+"/Ting.db3",null);
+		sqLiteDatabase = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString()+"/SQLite.db3",null);
 
 		text_1 		= findViewById(R.id.text_1);		//绑定控件
 		text_2		= findViewById(R.id.text_2);		//绑定控件
