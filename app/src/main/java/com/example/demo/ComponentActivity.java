@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * @date 			2020-08-14 12:59
  */
 public class ComponentActivity extends AppCompatActivity {
-	/**
+	/*
 	 * 新建四大组件，用以实现其功能
 	 * 		Activity
 	 * 		Service

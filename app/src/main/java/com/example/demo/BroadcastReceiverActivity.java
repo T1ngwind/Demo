@@ -37,21 +37,6 @@ public class BroadcastReceiverActivity extends AppCompatActivity {
 		//注册BroadcastReceiver
 		registerReceiver(myReceiver,intentFilter);
 
-	/*	//textView.setText("Ting听，真的听到了");
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					Thread.sleep(1000);
-				}catch(Exception e){
-				}finally{
-					textView.setText("Ting听的见吗？");
-				}
-
-			}
-		}).start();*/
-
-
 	}
 
 

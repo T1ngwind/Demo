@@ -15,11 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
  * @date 2020-08-15 18:16
  */
 public class ServiceActivity extends AppCompatActivity {
-	/**
-	 * @description:
-	 * 		创建三个按钮Butoon，用于实现简易音乐播放器的播放、暂停和停止。
-	 * */
 
+	//创建三个按钮Butoon，用于实现简易音乐播放器的播放、暂停和停止。
 	Button Play;		//新建一个Button按钮，用于控制音乐播放器播放音乐
 	Button Pause;		//新建一个Button按钮，用于控制音乐播放器暂停音乐
 	Button Stop;		//新建一个Button按钮，用于控制音乐播放器停止播放音乐

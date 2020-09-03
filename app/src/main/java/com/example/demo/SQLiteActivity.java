@@ -72,7 +72,7 @@ public class SQLiteActivity extends AppCompatActivity {
 	}
 
 
-	/**insertData:插入数据
+	/*insertData:插入数据
 	 *
 	 * @param  sqLiteDatabase 数据库
 	 * @param input1 String	第一个输入值
@@ -84,7 +84,7 @@ public class SQLiteActivity extends AppCompatActivity {
 		sqLiteDatabase.execSQL("insert into news_inf values(null,?,?)",new String[]{input1,input2});
 	}
 
-	/**inflateList:插入数据
+	/*inflateList:插入数据
 	 *
 	 * @param  cursor 游标，是每行的集合
 	 * @return	void 没有返回值

@@ -58,9 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
 					toast.setText("注册成功");
 
 					//把账号、密码和账号标识保存到sp里面
-					/**
-					 * 保存账号和密码到SharedPreferences中
-					 */
+					//保存账号和密码到SharedPreferences中
 					saveRegisterInfo(register_username, register_password);
 
 					Bundle data = new Bundle();
@@ -77,9 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-	/**
-	 * 从SharedPreferences中读取输入的用户名，判断SharedPreferences中是否有此用户名
-	 */
+	// 从SharedPreferences中读取输入的用户名，判断SharedPreferences中是否有此用户名
 	public boolean isExistUserName(String userName){
 
 		boolean has_userName=false;//表示是否有用户名
@@ -111,8 +107,6 @@ public class RegisterActivity extends AppCompatActivity {
 		//以用户名为key，密码为value保存在SharedPreferences中
 		//key,value,如键值对，editor.putString(用户名，密码）;
 		editor.putString(register_username,register_password);
-//		editor.putString("register_username",register_username);
-//		editor.putString("register_password",register_password);
 		//提交修改 editor.commit();
 		editor.commit();
 	}

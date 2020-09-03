@@ -33,29 +33,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 		this.datas = datas;
 	}
 
-	/**
-	 * 设置回调接口
-	 */
+	//设置回调接口
 	public interface OnItemClickListener {
 		void onItemClick(View view, int position);
 	}
-	/**
-	 * 设置长按回调接口
-	 */
+	//设置长按回调接口
 	public interface OnItemLongClickListener {
 		boolean onItemLongClick(View view, int position);
 	}
 
-	/**
-	 * 事件回调监听
-	 */
+	//事件回调监听
 	private OnItemClickListener onItemClickListener;
 	private OnItemLongClickListener onItemLongClickListener;
-	/**
-	 * 设置回调监听
-	 *
-	 * @param listener
-	 */
+	//设置回调监听
 	public void setOnItemClickListener(OnItemClickListener listener) {
 		this.onItemClickListener = listener;
 	}
@@ -90,18 +80,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 		//将position保存在itemView的Tag中，以便点击时进行获取
 		holder.itemView.setTag(position);
 
-		/*//1.在Adapter里面直接对控件做点击事件
-		holder.textView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				Toast toast = Toast.makeText(context,null,Toast.LENGTH_SHORT);
-				toast.setText(holder.textView.getText()+"被点击了");
-				toast.show();
 
-			}
-		});*/
-
-		//2.写接口，在Activity或Fragment上实现接口中定义的方法
+		//在Activity或Fragment上实现接口中定义的方法
 		holder.textView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -127,10 +107,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 	}
 
 
-	/**
-	 * @Description:getItemViewType
-	 * 	获取要素item的位置，返回不同的值，用于界面显示
-	 * */
+
+	//获取要素item的位置，返回不同的值，用于界面显示
 	@Override
 	public int getItemViewType(int position) {
 		if(position%2==0){
@@ -141,9 +119,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 	}
 
 
-	/**@description:getItemCount
-	 * 		返回Item的数量
-	 * */
+	//返回Item的数量
 	@Override
 	public int getItemCount() {
 		return datas.size();
@@ -151,11 +127,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
 
-	/**
-	 * @description:MyViewHolder类
-	 *   继承RecyclerView.ViewHolder抽象类的自定义MyViewHolder
-	 *
-	 * */
+	//继承RecyclerView.ViewHolder抽象类的自定义MyViewHolder
 	class MyViewHolder extends RecyclerView.ViewHolder{
 		TextView textView;
 		public MyViewHolder(View itemView){

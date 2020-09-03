@@ -16,8 +16,7 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-	/**
-	 * @description:成员变量
+	/*
 	 * 		four_component
 	 * 		ui_widget
 	 * 		multi_thread
@@ -39,12 +38,8 @@ public class MainActivity extends AppCompatActivity {
 		multi_thread = findViewById(R.id.multi_thread);		//绑定UI控件
 		storage = findViewById(R.id.storage);				//绑定UI控件
 
-		/**
-		 * @description:
-		 * 为TextView组件four_component绑定事件监听机制，跳转到新建的四大组件界面ComponentActivity
-		 *
-		 *
-		 * */
+
+		 //为TextView组件four_component绑定事件监听机制，跳转到新建的四大组件界面ComponentActivity
 		four_component.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -55,11 +50,8 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-		/**
-		 * @description:
-		 * 为TextView组件ui_widget绑定事件监听机制,跳转到新建的UI控件界面UIWedgetActivity
-		 *
-		 * */
+
+		 //为TextView组件ui_widget绑定事件监听机制,跳转到新建的UI控件界面UIWedgetActivity
 		ui_widget.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -70,11 +62,8 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-		/**
-		 * @description:
-		 * 为TextView组件multi_thread绑定事件监听机制,跳转到新建的多线程界面MultiThreadActivity
-		 *
-		 * */
+
+		//为TextView组件multi_thread绑定事件监听机制,跳转到新建的多线程界面MultiThreadActivity
 		multi_thread.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -85,11 +74,8 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-		/**
-		 * @description:
-		 * 为TextView组件storage绑定事件监听机制,跳转到新建的存储界面StorageActivity
-		 *
-		 * */
+
+		 //为TextView组件storage绑定事件监听机制,跳转到新建的存储界面StorageActivity
 		storage.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {

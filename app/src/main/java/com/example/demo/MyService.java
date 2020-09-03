@@ -27,10 +27,7 @@ public class MyService extends Service {
 	//定义一个静态数字，用于统计Service被Created的次数
 	static int mIndex = 0;
 
-	/**
-	 * @description：MyBinder
-	 * 		定义Binder接口实现
-	 * */
+	//定义Binder接口实现
 	class MyBinder extends Binder {
 		public MyService getService(){
 			return  MyService.this;
@@ -59,6 +56,7 @@ public class MyService extends Service {
 		if(intent!=null){
 			command = intent.getExtras().getInt("Service");
 			switch(command){
+
 				//Service 指令为1，则开始播放音乐
 				case 1:
 					mediaPlayer.start();
@@ -66,6 +64,7 @@ public class MyService extends Service {
 					toast.setText("开始播放音乐");
 					toast.show();
 					break;
+
 				//Service 指令为2，则暂停播放音乐
 				case 2:
 					mediaPlayer.pause();
@@ -73,6 +72,7 @@ public class MyService extends Service {
 					toast2.setText("暂停播放音乐");
 					toast2.show();
 					break;
+
 				//Service 指令为3，则停止播放音乐,并且释放mediaPlayer资源
 				case 3:
 					mediaPlayer.stop();

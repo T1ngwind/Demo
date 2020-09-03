@@ -16,9 +16,7 @@ import static com.example.demo.BroadcastReceiverActivity.textViewShow;
  */
 public class MyReceiver extends BroadcastReceiver {
 
-	/**重写onReceive()方法。在先打印一个Toast提示的同时，新建一个线程用于显示网络发生变化时的状态提示，持续时间两秒。
-	 * 
-	 * */
+	//重写onReceive()方法。在先打印一个Toast提示的同时，新建一个线程用于显示网络发生变化时的状态提示，持续时间两秒。
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Toast toast = Toast.makeText(context,null,Toast.LENGTH_SHORT);
@@ -27,9 +25,7 @@ public class MyReceiver extends BroadcastReceiver {
 		//显示状态发生改变
 		textViewShow.setText("网络状态发生变化");
 
-		/**新建一个线程用于显示网络发生变化时的状态提示，持续时间两秒
-		 *
-		 * */
+		//新建一个线程用于显示网络发生变化时的状态提示，持续时间两秒
 		new Thread(new Runnable() {
 			@Override
 			public void run() {

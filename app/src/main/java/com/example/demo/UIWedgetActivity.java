@@ -32,7 +32,7 @@ import java.util.List;
  * @date 			2020-08-14 12:59
  */
 public class UIWedgetActivity extends AppCompatActivity {
-	/**
+	/*
 	 * @description:成员变量
 	 * 		textView
 	 * 		editText
@@ -78,10 +78,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 		recyclerView 	= findViewById(R.id.recyclerview);	//绑定控件
 
 
-		/**
-		 * @description:TextView
-		 * 	为TextView组件textView绑定事件监听机制，更改该组件的文字描述
-		 * */
+		//为TextView组件textView绑定事件监听机制，更改该组件的文字描述
 		textView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -89,10 +86,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 			}
 		});
 
-		/**
-		 * @description:Button
-		 * 为Button控件button绑定事件监听
-		 * */
+		//为Button控件button绑定事件监听
 		button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -102,10 +96,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 			}
 		});
 
-		/**
-		 * @description:RadioButton
-		 * 为RadioButton控件radioButton1绑定事件监听
-		 * */
+		//为RadioButton控件radioButton1绑定事件监听
 		radioButton1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -115,10 +106,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 			}
 		});
 
-		/**
-		 * @description:RadioGroup
-		 * 为RadioGroup控件radiogroup绑定事件监听，根据选择的按钮显示不同的Toast。
-		 * */
+		//为RadioGroup控件radiogroup绑定事件监听，根据选择的按钮显示不同的Toast。
 		radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -128,10 +116,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 			}
 		});
 
-		/**
-		 * @description:CheckBox
-		 * 为CheckBox控件checkbox绑定事件监听，通过Toast显示不同的信息。
-		 * */
+		//为CheckBox控件checkbox绑定事件监听，通过Toast显示不同的信息。
 		checkBox1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -145,10 +130,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 			}
 		});
 
-		/**
-		 * @description:SeekBar
-		 * 为SeekBar控件seekBar绑定事件监听，通过Toast显示出seekBar的刻度值。
-		 * */
+		//为SeekBar控件seekBar绑定事件监听，通过Toast显示出seekBar的刻度值。
 		seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -169,8 +151,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 		});
 
 
-		/**
-		 * @description:ListView
+		/*
 		 * 	将String数组包装成ArrayAdapter，并为ListView控件listView设置适配器Adapter。
 		 * 	并且设置要素点击事件监听，通过Toast将被点击的item的名称打印出来
 		 * */
@@ -189,11 +170,7 @@ public class UIWedgetActivity extends AppCompatActivity {
 		});
 
 
-		/**
-		 * @description:RecyclerView
-		 *		使用线性布局管理器
-		 *
-		 * */
+		//使用线性布局管理器
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(UIWedgetActivity.this,RecyclerView.HORIZONTAL,false);
 		//设置recyclerView为线性布局管理器
 		recyclerView.setLayoutManager(linearLayoutManager);
@@ -211,8 +188,6 @@ public class UIWedgetActivity extends AppCompatActivity {
 				Toast toast = Toast.makeText(UIWedgetActivity.this,null,Toast.LENGTH_SHORT);
 				toast.setText(arrayList.get(position)+"被点击了");
 				toast.show();
-				/*Toast.makeText(RecyclerViewActivity.this,datas.get(position)+"被点击了",
-						Toast.LENGTH_SHORT).show();*/
 			}
 		});
 		//长按事件
@@ -222,8 +197,6 @@ public class UIWedgetActivity extends AppCompatActivity {
 				Toast toast = Toast.makeText(UIWedgetActivity.this,null,Toast.LENGTH_SHORT);
 				toast.setText(arrayList.get(position)+"被长按了");
 				toast.show();
-				/*Toast.makeText(RecyclerViewActivity.this,datas.get(position)+"被长按了",
-						Toast.LENGTH_SHORT).show();*/
 				return true;
 			}
 		});
